@@ -1,2 +1,9 @@
-<h1>Homes#index</h1>
-<p>Find me in app/views/homes/index.html.erb</p>
+<%= render 'templates/header' %>
+
+<main>
+    <%= link_to buys_index_path do %>
+        <button>購入</button>
+    <% end %>
+    <button>投票</button>
+    <button>コレクション</button>
+</main>
