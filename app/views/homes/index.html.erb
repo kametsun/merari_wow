@@ -1,13 +1,57 @@
 <%= render 'templates/header' %>
 
+<style>
+    html, body { min-height: 100%; }
+
+    main {
+        text-align: center;
+    }
+    
+    a {
+        color : inherit;
+        text-decoration : none;
+    }
+    
+    .container {
+        display: inline-flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: 96vh;
+    }
+
+    .button {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    button {
+        width: 55vw;
+        height: 24vh;
+        margin: 3vh 0vw
+    }
+</style>
+
 <main>
-    <%= link_to buys_index_path do %>
-        <button>購入</button>
-    <% end %>
-    <%= link_to votes_index_path do %>
-        <button>投票</button>
-    <% end %>
-    <%= link_to nfts_index_path do %>
-        <button>コレクション</button>
-    <% end %>
+    <div class="container">
+        <%# <div class="button"> %>
+            <%= link_to buys_index_path do %>
+                <button>購入</button>
+            <% end %>
+        <%# </div> %>
+        <%# <div class="button"> %>
+            <%= link_to votes_index_path do %>
+                <button>投票</button>
+            <% end %>
+        <%# </div>
+        <div class="button"> %>
+            <%= link_to nfts_index_path do %>
+                <button>コレクション</button>
+            <% end %>
+        <%# </div> %>
+    </div>
 </main>
