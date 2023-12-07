@@ -1,0 +1,39 @@
+<sc>
+<h1>メンバー投票</h1>
+
+<% @users.each do |idol| %>
+    <div class="container">
+        <div class="image">
+            画像
+        </div>
+        <div class="name">
+            <%= idol.name %>
+        </div>
+        <div>
+            <button class="vote-button">投票</button>
+        </div>
+    </div>
+      <div class="layer js-modal">
+    <div class="modal">
+      <div class="modal__inner">
+        <div class="modal__button-wrap">
+        </div>
+        <div class="modal__contents">
+          <div class="modal__content">
+            <p>投票しますか？</p>
+                <button class="close-button js-close-button">
+                    いいえ
+                </button>
+                <%= link_to user_path(idol) do %>
+                    <button>はい</button>
+                <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+
+  <button class="button js-modal-button">モーダルボタン</button>

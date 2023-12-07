@@ -4,6 +4,10 @@
     <%= link_to buys_index_path do %>
         <button>購入</button>
     <% end %>
-    <button>投票</button>
-    <button>コレクション</button>
+    <%= link_to votes_index_path do %>
+        <button>投票</button>
+    <% end %>
+    <%= link_to nfts_index_path do %>
+        <button>コレクション</button>
+    <% end %>
 </main>
