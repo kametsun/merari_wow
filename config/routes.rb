@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'homes#index'
+  get "ntf" => "nfts#firstGacha", as:"first_gacha"
   get 'buys/index'
 
   get 'login' => 'users#login'

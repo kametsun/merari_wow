@@ -24,3 +24,17 @@ modalCloses.forEach((button) => {
     modal.classList.remove('is-open');
   });
 });
+
+document.addEventListener("turbo:load", function () {
+  var counter = document.getElementById('token');
+  var count = 0;
+
+  function increase() {
+      if (count <= 100) {
+          counter.innerText = count;
+          count++;
+      }
+  }
+
+  setInterval(increase, 100);
+});
