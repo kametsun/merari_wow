@@ -1,9 +1,67 @@
+<style>
+    main {
+        text-align: center;
+    }
+
+    .video-wrapper {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .video-wrapper > video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .container {
+        display: inline-flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: 10vh;
+    }
+
+    a {
+        color : inherit;
+        text-decoration : none;
+        position: relative;
+    }
+
+    a p {
+        position: absolute;/*絶対配置*/
+        color: white;/*文字は白に*/
+        font-size: 20pt;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        margin:0;
+        padding:0;
+    }
+
+    a img {
+        width: 55vw;
+        height: 10vh;
+        margin: 3vh 0vw
+    }
+</style>
+
 <%= render 'templates/header' %>
 
-<h1>NFT 詳細ページ</h1>
-<%# <%= image_tag(@nft.nft_image, size: "600x600", autoplay: true, muted: true ) %> %>
-<%= video_tag("mercari.mp4", size: "600x600", autoplay: true, muted: true, playsInline: true) %>
-<p><%= @nft.name %></p>
-<%= link_to root_path do %>
-    <button>Home</button>
-<% end%>
+<div class="video-wrapper">
+    <%= video_tag("player.mp4", size: "600x600", loop: true, autoplay: true, muted: true, playsInline: true) %>
+</div>
+
+<div class="container">
+    <%= link_to root_path do %>
+        <img src="/assets/button_bg.png">
+        <p>HOME</p>
+    <% end%>
+</div>
