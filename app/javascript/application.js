@@ -3,8 +3,6 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 // すべての投票ボタンを取得
-
-
 document.addEventListener("turbo:load", function () {
   var counter = document.getElementById('token');
   var count = 0;
@@ -16,7 +14,7 @@ document.addEventListener("turbo:load", function () {
       }
   }
 
-  setInterval(increase, 100);
+  setInterval(increase, 10);
 
   const voteButtons = document.querySelectorAll('.vote-button');
 
