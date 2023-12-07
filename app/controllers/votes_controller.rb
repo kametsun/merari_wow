@@ -3,7 +3,8 @@ class VotesController < ApplicationController
     @users = User.all
   end
 
-  def vote
-    
+  def create
+    flash[:notice] = "投票完了しました!!"
+    redirect_to nft_path(params[:id])
   end
 end

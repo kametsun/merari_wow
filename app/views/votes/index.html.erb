@@ -21,8 +21,8 @@
                     <div class="modal__content">
                         <p>投票しますか？</p>
                         <button class="close-button js-close-button">いいえ</button>
-                        <%= link_to user_path(idol) do %>
-                            <button>はい</button>
+                        <%= form_with url: "/vote/#{idol.id}", method: :post do |f| %>
+                            <%= f.submit "はい"%>
                         <% end %>
                     </div>
                 </div>
