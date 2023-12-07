@@ -40,3 +40,9 @@ User.create(name: '石田 なつみ')
 User.create(name: '佐藤 ゆうこ')
 User.create(name: '大島 こころ')
 User.create(name: '安田 れな')
+
+users = User.all
+
+users.each do |user|
+    user.update(image: File.open("app/assets/images/visual.png"))
+end

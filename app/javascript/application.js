@@ -2,26 +2,25 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-console.log("hi");
+// すべての投票ボタンを取得
+const voteButtons = document.querySelectorAll('.vote-button');
 
-const modal = document.querySelector('.js-modal');
-const modalButton = document.querySelector('.js-modal-button');
-
-const voteButtons = document.querySelectorAll(".vote-button");
-
+// 各ボタンにクリックイベントリスナーを追加
 voteButtons.forEach((button) => {
   button.addEventListener('click', () => {
+    const idolId = button.dataset.id;
+    const modal = document.querySelector(`#modal-${idolId}`);
     modal.classList.add('is-open');
   });
 });
 
+// すべてのモーダルクローズボタンを取得
+const modalCloses = document.querySelectorAll('.js-close-button');
 
-const modalClose = document.querySelector('.js-close-button');
-
-modalButton.addEventListener('click', () => {
-  modal.classList.add('is-open');
-});
-
-modalClose.addEventListener('click', () => {
-  modal.classList.remove('is-open');
+// 各クローズボタンにクリックイベントリスナーを追加
+modalCloses.forEach((button) => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.js-modal');
+    modal.classList.remove('is-open');
+  });
 });
