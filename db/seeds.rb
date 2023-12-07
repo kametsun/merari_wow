@@ -43,8 +43,18 @@ Nft.create(name: '安田 れな')
 
 Nfts = Nft.all
 
+idx = 1
 Nfts.each do |nft|
-    nft.update(nft_image: File.open("app/assets/images/visual.png"))
+    if idx % 3 == 1
+        nft.update(nft_image: File.open("app/assets/images/card_1.png"))
+    end
+    if idx % 3 == 2
+        nft.update(nft_image: File.open("app/assets/images/card_2.png"))
+    end
+    if idx % 3 == 0
+        nft.update(nft_image: File.open("app/assets/images/card_3.png"))
+    end
+    idx += 1
 end
 
 User.create(name: '佐藤 まりな')

@@ -1,12 +1,55 @@
+<style>
+    .left-right {
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    .left {
+        margin: 8px;
+        padding: 8px;
+        text-align: center;
+        background-color: #FF67B3;
+        color: white;
+    }
+    .right {
+        margin: 8px;
+        padding: 8px;
+        text-align: center;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        width: calc(33.33% - 20px); /* 3つの要素を横並びにするための幅。マージン等の余白も考慮して調整する */
+        margin: 10px;
+        text-align: center;
+    }
+
+    .conrainer img {
+        width: 30vw;
+        height: calc(30vw * 1.5);
+    }
+</style>
+
 <%= render 'templates/header' %>
 
-<button>五十音順</button>
-<button>カメラ</button>
+<div class="left-right">
+    <button class="left">五十音順</button>
+    <button class="right">
+        <%= image_tag("camera.png", size: "60x60") %>
+    </button>
+</div>
 
-<%= @nfts.each do |nft| %>
-    <%= link_to nft_path(nft) do %>
-        <div class="card">
-            <%= image_tag nft.nft_image, :size => "320x480" %>
+<div class="container">
+    <% @nfts.each do |nft| %>
+        <div class="item">
+            <%= link_to nft_path(nft) do %>
+                <div class="card">
+                    <%= image_tag nft.nft_image, :size => "200x300" %>
+                </div>
+            <% end %>
         </div>
     <% end %>
-<% end %>
+</div>

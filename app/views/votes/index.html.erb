@@ -1,6 +1,16 @@
 <style>
 h1 {
     text-align: center;
+    color: #FF67B3;
+}
+
+span {
+    font-size: 28pt;
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.3);
+    color: #D6FFCF;
+    text-stroke: 1px #FF67B3;
+    -webkit-text-stroke: 1px #FF67B3;
+    margin: 0 10px;
 }
 
 .container {
@@ -17,37 +27,37 @@ h1 {
 
 <%= render 'templates/header' %>
 
-<h1>あなたの推しに<br>投票してください</h1>
+<h1>あなたの<span>推し</span>に<br>投票してください</h1>
 
 <div class="container">
     <% @users.each do |idol| %>
-    <div class="item">
-            <div class="image">
-                <%= image_tag idol.image, :size => "200x200"%>
-            </div>
-            <div class="name">
-                <%= idol.name %>
-            </div>
-            <div>
-                <button class="vote-button" data-id="<%= idol.id %>">投票</button>
-            </div>
-        <div class="layer js-modal" id="modal-<%= idol.id %>">
-        <div class="modal">
-            <div class="modal__inner">
-                <div class="modal__button-wrap">
+        <div class="item">
+                <div class="image">
+                    <%= image_tag idol.image, :size => "200x200"%>
                 </div>
-                <div class="modal__contents">
-                    <div class="modal__content">
-                        <p>投票しますか？</p>
-                        <button class="close-button js-close-button">いいえ</button>
-                        <%= form_with url: "/vote/#{idol.id}", method: :post do |f| %>
-                            <%= f.submit "はい"%>
-                        <% end %>
+                <div class="name">
+                    <%= idol.name %>
+                </div>
+                <div>
+                    <button class="vote-button" data-id="<%= idol.id %>">投票</button>
+                </div>
+            <div class="layer js-modal" id="modal-<%= idol.id %>">
+            <div class="modal">
+                <div class="modal__inner">
+                    <div class="modal__button-wrap">
+                    </div>
+                    <div class="modal__contents">
+                        <div class="modal__content">
+                            <p>投票しますか？</p>
+                            <button class="close-button js-close-button">いいえ</button>
+                            <%= form_with url: "/vote/#{idol.id}", method: :post do |f| %>
+                                <%= f.submit "はい"%>
+                            <% end %>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 <% end %>
 </div>
