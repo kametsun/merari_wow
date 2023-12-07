@@ -1,6 +1,12 @@
 <style>
     body {
-        background-image: url(./assets/login_background.png);
+        /* background-image: url(./assets/login_background.png); */
+        background-color: #C50935;
+    }
+
+    a {
+        color : inherit;
+        text-decoration : none;
     }
 
     .conteinar {
@@ -14,15 +20,47 @@
 
     button {
         justify-content: center;
+        width: 80vw;
         height: 10vh;
-        margin: 60vh 20vw 30vh 20vw;
+        margin: 10vh 10vw 10vh 10vw;
+        border: 3px solid #FFFFFF;
+        background: #FF0311;
+        color: #FFFFFF;
+        font-size: 18pt;
+        font-weight: bold;
+        align-items: center;
+        display: flex;
+    }
+
+    img {
+        height: 60%;
+        width: auto;
+        margin: 0 5% 0 0;
+    }
+
+    #other {
+        margin: 0vh 10vw;
+        border: 0px solid #FF0311;
+        background: #FFFFFF;
+        color: #FF0311;
+    }
+
+    #kashima {
+        width: 30vw;
+        height auto;
+        margin: 20vh 35vw 0 35vw;
     }
 </style>
 
-<h1>いい感じのテキスト</h1>
-
 <div class="container">
+    <img id="kashima" src="/assets/kashima.png">
     <%= link_to first_gacha_path do %>
-        <button>メルカリと連携する</button>
+        <button>
+            <img src="/assets/mercari_logo.jpeg">
+            メルカリでログイン
+        </button>
     <% end %>
+    <button id="other">
+            その他
+    </button>
 </div>
