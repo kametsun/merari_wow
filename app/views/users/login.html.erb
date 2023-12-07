@@ -1,5 +1,28 @@
-<h1>Log in</h1>
+<style>
+    body {
+        background-image: url(./assets/login_background.png);
+    }
 
-<%= link_to nfts_show_path do %>
-    <button>メルカリと連携する</button>
-<% end %>
+    .conteinar {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 96vh;
+    }
+
+    button {
+        justify-content: center;
+        height: 10vh;
+        margin: 60vh 20vw 30vh 20vw;
+    }
+</style>
+
+<h1>いい感じのテキスト</h1>
+
+<div class="container">
+    <%= link_to root_path do %>
+        <button>メルカリと連携する</button>
+    <% end %>
+</div>

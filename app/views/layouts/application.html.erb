@@ -10,7 +10,13 @@
     <%= javascript_importmap_tags %>
     <%= yield(:js) %>
   </head>
-
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    </style>
   <body>
     <!-- フラッシュメッセージ -->
     <div class="notice">

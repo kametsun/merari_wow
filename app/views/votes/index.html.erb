@@ -1,18 +1,37 @@
-<h1>メンバー投票</h1>
+<style>
+h1 {
+    text-align: center;
+}
 
-<% @users.each do |idol| %>
-    <div class="container">
-        <div class="image">
-            画像
-        </div>
-        <div class="name">
-            <%= idol.name %>
-        </div>
-        <div>
-            <button class="vote-button" data-id="<%= idol.id %>">投票</button>
-        </div>
-    </div>
-    <div class="layer js-modal" id="modal-<%= idol.id %>">
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: calc(33.33% - 20px); /* 3つの要素を横並びにするための幅。マージン等の余白も考慮して調整する */
+  margin: 10px;
+  text-align: center;
+}
+</style>
+
+<%= render 'templates/header' %>
+
+<h1>あなたの推しに<br>投票してください</h1>
+
+<div class="container">
+    <% @users.each do |idol| %>
+    <div class="item">
+            <div class="image">
+                <%= image_tag idol.image, :size => "200x200"%>
+            </div>
+            <div class="name">
+                <%= idol.name %>
+            </div>
+            <div>
+                <button class="vote-button" data-id="<%= idol.id %>">投票</button>
+            </div>
+        <div class="layer js-modal" id="modal-<%= idol.id %>">
         <div class="modal">
             <div class="modal__inner">
                 <div class="modal__button-wrap">
@@ -29,6 +48,7 @@
             </div>
         </div>
     </div>
+    </div>
 <% end %>
-
+</div>
 
