@@ -45,14 +45,10 @@ Nfts = Nft.all
 
 idx = 1
 Nfts.each do |nft|
-    if idx % 3 == 1
-        nft.update(nft_image: File.open("app/assets/images/card_1.png"))
-    end
-    if idx % 3 == 2
-        nft.update(nft_image: File.open("app/assets/images/card_2.png"))
-    end
-    if idx % 3 == 0
-        nft.update(nft_image: File.open("app/assets/images/card_3.png"))
+    if idx % 2 == 0
+        nft.update(front_image: File.open("app/assets/images/players_1-01.jpg"), back_image: File.open("app/assets/images/players_1-02.jpg"))
+    else idx % 2 != 0
+        nft.update(front_image: File.open("app/assets/images/players_1-03.jpg"), back_image: File.open("app/assets/images/players_1-04.jpg"))
     end
     idx += 1
 end
