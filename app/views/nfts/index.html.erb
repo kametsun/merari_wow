@@ -16,20 +16,28 @@
         padding: 8px;
         text-align: center;
     }
+    .right img {
+        height: 90%;
+        width: auto;
+    }
+    button {
+        border-radius: 13px;
+        height: 53px;
+    }
     .container {
         display: flex;
         flex-wrap: wrap;
     }
 
     .item {
-        width: calc(33.33% - 20px); /* 3つの要素を横並びにするための幅。マージン等の余白も考慮して調整する */
-        margin: 10px;
+        width: calc(33.33vw - 5vw); /* 3つの要素を横並びにするための幅。マージン等の余白も考慮して調整する */
+        margin: 2.5vw;
         text-align: center;
     }
 
-    .conrainer img {
-        width: 30vw;
-        height: calc(30vw * 1.5);
+    .item img {
+        width: 100%;
+        height: calc(33vw * 1.5);
     }
 </style>
 
