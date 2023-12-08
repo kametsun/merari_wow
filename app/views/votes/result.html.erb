@@ -1,5 +1,8 @@
+<%= render 'templates/header' %>
 <h1>投票完了</h1>
 <div>
     <h1>投票が完了しました！</h1>
-    
+    <%= @vote.name %>
+    <%= image_tag @vote.image %>
+    <%= @user.name%>
 </div>

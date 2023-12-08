@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "ntf" => "nfts#firstGacha", as: "first_gacha"
   get 'buys/index'
   get "votes/index" => "votes#index", as: "votes"
-  get "votes" => "votes#create", as: "vote_create"
+  get "votes/:id" => "votes#create", as: "vote_create"
   get 'result' => "votes#result", as: "result"
 
   get 'login' => 'users#login', as: "login"
