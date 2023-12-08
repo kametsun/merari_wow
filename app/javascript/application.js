@@ -7,14 +7,22 @@ document.addEventListener("turbo:load", function () {
   var counter = document.getElementById("token");
   var count = 0;
 
+  const token = document.getElementById("token").dataset.userToken;
+  console.log(token)
+
   function increase() {
-    if (count <= 100) {
+    if (count <= token) {
       counter.innerText = count;
       count++;
     }
   }
 
-  setInterval(increase, 10);
+  if (token >= 100) {
+    setInterval(increase, 1);
+  } else {
+    setInterval(increase, 100);
+  }
+  
 
   const voteButtons = document.querySelectorAll(".vote-button");
 

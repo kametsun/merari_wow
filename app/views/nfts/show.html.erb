@@ -56,7 +56,12 @@
 <%= render 'templates/header' %>
 
 <div class="video-wrapper">
-    <%= video_tag("player.mp4", size: "600x600", loop: true, autoplay: true, muted: true, playsInline: true) %>
+    <% if params[:id].to_i % 2 == 0 %>
+        <%= video_tag("player.mp4", size: "600x600", loop: true, autoplay: true, muted: true, playsInline: true) %>
+    <% else %>
+        <%= video_tag("player2.mp4", size: "600x600", loop: true, autoplay: true, muted: true, playsInline: true) %>
+    <% end %>
+    
 </div>
 
 <div class="container">
