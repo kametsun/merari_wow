@@ -54,3 +54,6 @@ Nfts.each do |nft|
 end
 
 User.create!(name: "エンドユーザ", token: 0)
+
+Vote.create!(name: "赤ユニフォーム", description: "赤ユニフォームです", image: File.open("app/assets/images/red_uniform.jpg"))
+Vote.create!(name: "白ユニフォーム", description: "白ユニフォームです", image: File.open("app/assets/images/white_uniform.jpg"))
