@@ -1,6 +1,6 @@
 class NftsController < ApplicationController
   skip_before_action :getUser, only: [:firstGacha, :show]
-  
+
   def index
     @nfts = Nft.where.not(id: [2, 3])
   end
@@ -28,8 +28,7 @@ class NftsController < ApplicationController
     if @nft.id == 3
       cookies.delete(:user_id)
       sleep(2)
-      # QRコード用にアカウント追加
-      @user = createNewUser
+
       @nft.update(user_id: @user.id)
       @user.token = @user.token + @nft.token
     end

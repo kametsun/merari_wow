@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'samples/:id'
   root to: 'homes#index'
   get "ntf" => "nfts#firstGacha", as: "first_gacha"
   get 'buys/index'
