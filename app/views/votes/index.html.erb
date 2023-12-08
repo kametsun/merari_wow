@@ -38,7 +38,7 @@
             <div id="green" class="num"><%= idx %></div>
         <% end %>
         <%= image_tag vote.image %>
-        <%= form_with(model: vote, url: votes_path, method: :post, local: true) do |f| %>
+        <%= form_with(model: vote, url: vote_create_path, method: :post, local: true) do |f| %>
             <%= f.submit "投票する", class: "vote-button" %>
         <% end %>
     </div>
