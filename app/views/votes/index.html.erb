@@ -19,28 +19,43 @@ span {
 }
 
 .item {
-  width: calc(33.33% - 20px); /* 3つの要素を横並びにするための幅。マージン等の余白も考慮して調整する */
+  width: calc(100% - 20px); /* 3つの要素を横並びにするための幅。マージン等の余白も考慮して調整する */
   margin: 10px;
   text-align: center;
+}
+
+.uniform {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.uniform button {
+    margin: 0 0 30px 30px;
+    width: 80px;
+    height: 50px;
+    border-radius:30px;
+    background: #DC4751;
+    color: #FFFFFF;
+    font-size: 20pt;
 }
 </style>
 
 <%= render 'templates/header' %>
 
-<h1>あなたの<span>推し</span>に<br>投票してください</h1>
+<h1>ユニフォーム<span>⭐️</span>人気投票</h1>
 
 <div class="container">
     <% @users.each do |idol| %>
         <div class="item">
+            <div class="uniform">
                 <div class="image">
                     <%= image_tag idol.image, :size => "200x200"%>
-                </div>
-                <div class="name">
-                    <%= idol.name %>
                 </div>
                 <div>
                     <button class="vote-button" data-id="<%= idol.id %>">投票</button>
                 </div>
+            </div>
             <div class="layer js-modal" id="modal-<%= idol.id %>">
             <div class="modal">
                 <div class="modal__inner">
