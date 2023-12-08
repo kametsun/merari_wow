@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  get 'samples/show'
   root to: 'homes#index'
   get "ntf" => "nfts#firstGacha", as: "first_gacha"
   get 'buys/index'
-  get "votes" => "votes#index", as: "votes"
-  post "votes" => "votes#create", as: "vote_create"
+  get "votes/index" => "votes#index", as: "votes"
+  get "votes" => "votes#create", as: "vote_create"
   get 'result' => "votes#result", as: "result"
 
   get 'login' => 'users#login', as: "login"

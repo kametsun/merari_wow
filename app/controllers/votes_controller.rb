@@ -9,6 +9,6 @@ class VotesController < ApplicationController
   end
 
   def result
-
+    @selected_vote = Vote.find(params[:id])
   end
 end

@@ -1,5 +1,6 @@
 class NftsController < ApplicationController
   skip_before_action :getUser, only: [:firstGacha, :show]
+  
   def index
     @nfts = Nft.where.not(id: [2, 3])
   end
