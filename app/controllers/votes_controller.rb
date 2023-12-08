@@ -1,5 +1,10 @@
 class VotesController < ApplicationController
   def index
-    @users = User.all
+    @votes = Vote.all
+  end
+
+  def create
+    flash[:notice] = "投票完了しました!!"
+    redirect_to root_path
   end
 end
