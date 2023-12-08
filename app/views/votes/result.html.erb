@@ -45,5 +45,9 @@
     </div>
     <h1>投票したユニフォーム</h1>
     <%= image_tag @vote.image %>
-    <%# <%= @user.name%>    
+    <%= @user.name%>
+    <%= link_to root_path do %>
+        <!-- 表示したい文字 or Iconに設定してください -->
+        <button>ホーム</button>
+    <% end %>
 </div>
