@@ -4,7 +4,7 @@
         justify-content: space-between;
         margin: 20% 10%;
     }
-    img {
+    .container img {
         width: 40vw;
     }
     #green {
@@ -23,12 +23,31 @@
     .num {
         font-weight: bold;
         font-size: 24pt;
+        margin-top: 25px;
+    }
+    .vote-button {
+        background: #E25559;
+        width: 50px;
+        height: 30px;
+        color: #fff;
+        border: 0px solid #333;
+        margin-top: 25px;
+    }
+    h1 {
+        text-align: center;
+    }
+    .bg {
+        background: #fff;
+        border-radius: 6px;
+        margin: 10vh 5vw 0 5vw;
+        padding: 5vh;
     }
 </style>
 
 <%= render 'templates/header' %>
-
+<div class="bg">
 <h1>ユニフォーム人気投票</h1>
+
 <% idx = 1%>
 <% @votes.each do |vote|%>
     <div class="container">
@@ -39,8 +58,9 @@
         <% end %>
         <%= image_tag vote.image %>
         <%= form_with(model: vote, url: votes_path, method: :post, local: true) do |f| %>
-            <%= f.submit "投票する", class: "vote-button" %>
+            <%= f.submit "投票", class: "vote-button" %>
         <% end %>
     </div>
     <% idx += 1 %>
 <% end %>
+</div>
