@@ -1,7 +1,11 @@
 <%= render 'templates/header' %>
 
 <style>
-    html, body { min-height: 100%; }
+    html { min-height: 100%; }
+    body {
+        min-height: 100%;
+        background-image: url(./assets/bg.png);
+    }
 
     main {
         text-align: center;
@@ -16,7 +20,7 @@
     a p {
         position: absolute;/*絶対配置*/
         color: white;/*文字は白に*/
-        font-size: 40pt;
+        font-size: 20pt;
         top: 50%;
         left: 50%;
         -ms-transform: translate(-50%,-50%);
@@ -31,22 +35,20 @@
         flex-direction: column;
         text-align: center;
         width: 100%;
-        height: 96vh;
+        height: 50vh;
+        margin-top: 10vh;
     }
-
-    /* .button {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-        margin: 0 auto;
-    } */
 
     a img {
         width: 55vw;
-        height: 24vh;
+        height: 10vh;
         margin: 3vh 0vw
+    }
+
+    #kashima {
+        width: 30vw;
+        height auto;
+        margin: 10vh 35vw 0 35vw;
     }
 </style>
 
@@ -64,5 +66,6 @@
             <img src="/assets/button_bg.png">
             <p>コレクション</p>
         <% end %>
+        <img id="kashima" src="/assets/kashima.png">
     </div>
 </main>

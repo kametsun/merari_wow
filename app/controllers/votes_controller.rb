@@ -5,6 +5,10 @@ class VotesController < ApplicationController
 
   def create
     flash[:notice] = "投票完了しました!!"
-    redirect_to root_path
+    redirect_to result_path
+  end
+
+  def result
+    @selected_vote = Vote.find(params[:id])
   end
 end
