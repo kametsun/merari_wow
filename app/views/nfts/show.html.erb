@@ -58,6 +58,8 @@
 <div class="video-wrapper">
     <% if params[:id].to_i % 2 == 0 %>
         <%= video_tag("player.mp4", size: "600x600", loop: true, autoplay: true, muted: true, playsInline: true) %>
+    <% elsif params[:id].to_i == 1 %>
+        <%= image_tag @nft.front_image, size: "600x600" %>
     <% else %>
         <%= video_tag("player2.mp4", size: "600x600", loop: true, autoplay: true, muted: true, playsInline: true) %>
     <% end %>
